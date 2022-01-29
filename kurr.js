@@ -2191,7 +2191,7 @@ _書 ${prefix}ttp3 [ _teks_ ]_
 _書 ${prefix}ttp4 [ _teks_ ]_
 _書 ${prefix}toimg_
 _書 ${prefix}tomp3 [ _reply video_ ]_
-_書 ${prefix}togif [ _reply sticker gif_ ]_
+_書 ${prefix}trigger [ _reply photo_ ]_
 _書 ${prefix}robot [ _reply audio_ ]_
 _書 ${prefix}balik [ _reply audio_ ]_
 _書 ${prefix}bass [ _reply audio_ ]_
@@ -6197,19 +6197,24 @@ break
 							reply(`Kirim gambar/video dengan caption ${prefix}stickerwm nama|author atau tag gambar/video yang sudah dikirim\nNote : Durasi video maximal 10 detik`)
 						}
 						break
-                    case 'smeme': case 'stickermeme': case 'stickmeme': {
-if (!text) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
-if (text.includes('|')) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
-if (!/image/.test(mime)) return reply(`Kirim/Reply Foto Dengan Caption ${prefix + command} *teks*`)
-reply(lang.wait())
-arg = args.join(' ')
-mee = await kurr.downloadAndSaveMediaMessage(quoted)
-mem = await TelegraPh(mee)
-meme = `https://api.memegen.link/images/custom/-/${arg}.png?background=${mem}`
-memek = await kurr.sendImageAsSticker(m.chat, meme, m, { packname: global.packname, author: global.author })
-await fs.unlinkSync(memek)
-}
-break
+                    case 'stickermeme': case 'memesticker': case 'memestick': case 'stickmeme': case 'stcmeme': case 'smeme':
+						if (args.length < 1) return reply(`Kirim perintah *${prefix + command}* NekellH4xor`)
+									if (q.includes('|')) return reply(`Kirim perintah *${prefix + command}* NekellH4xor`)
+									try {
+										if (!isQuotedImage) return reply(`Reply Gambar!`)
+										reply(lang.wait())
+										var teks2 = args.join(' ')
+										var enmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
+										var mediia = await kurr.downloadMediaMessage(enmedia)
+										var njay = await uploadImages(media)
+										var resu = await getBuffer(`https://api.memegen.link/images/custom/-/${teks2}.png?background=${njay}`)
+										kurr.sendMessage(from, resu, image, {caption:'.stiker', quoted: mek})
+										fs.unlinkSync(media)
+										} catch (e) {
+											console.log(e)
+										}
+										limitAdd(sender, limit)
+									break
 					case 'takestick':
 					case 'take':
             
