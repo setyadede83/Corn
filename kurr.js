@@ -5498,33 +5498,21 @@ if (!isOwner && !mek.key.fromMe) return reply(`Khusus Owner Om`)
 				return kurr.sendMessage(from, JSON.stringify(eval(process.exit())))
 				reply('Okey')
 				break
-				case 'tomp4':            
+				case 'tomp4':
+					case 'togif':
+            
 					if (!isQuotedSticker) return reply('reply stiker nya')
                                         reply(`Bentar Nyett....`)
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             owgi = await kurr.downloadAndSaveMediaMessage(ger)
             webp2mp4File(owgi).then(res=>{
-            kurr.sendMessage(from, res.result, video, { mimetype: 'video/mp4', quoted: mek })
+            sendMediaURL(from,res.result)
             })
             }else {
             reply('reply Stickernya Dulu Mekkkkk!')
             }
             fs.unlinkSync(owgi)
-            break
-            case 'togif':            
-					if (!isQuotedSticker) return reply('reply stiker nya')
-                                        reply(`Bentar Nyett....`)
-            if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
-            gerr = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-            owgii = await kurr.downloadAndSaveMediaMessage(gerr)
-            webp2mp4File(owgii).then(res=>{
-            kurr.sendMessage(from, res.result, video, { mimetype: 'video/mp4', gifPlayback: true, quoted: mek })
-            })
-            }else {
-            reply('reply Stickernya Dulu Mekkkkk!')
-            }
-            fs.unlinkSync(owgii)
             break
             case 'tomp3':
             
