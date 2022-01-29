@@ -1192,19 +1192,19 @@ kurr.sendMessage("6289695073357@s.whatsapp.net", `bang di gosipin Ama wa.me/${se
 kurr.sendMessage(from, "Mampus Udh Ku Laporin", text)
 }
 if(budy.includes('Assalamualaikum')){
-cpref = `Walaikumsalam, Saya CornFake-Bot Whatsapp Ketik .menu Untuk Mengakses`
+cpref = `Walaikumsalam, Saya CornFake-Bot Whatsapp Ketik ${prefix}menu Untuk Mengakses`
 reply(cpref)
 }
 if(budy.includes('assalamualaikum')){
-cpref = `walaikumsalam, Saya CornFake-Bot Whatsapp Ketik .menu Untuk Mengakses`
+cpref = `walaikumsalam, Saya CornFake-Bot Whatsapp Ketik ${prefix} Untuk Mengakses`
 reply(cpref)
 }
 if(budy.includes('Hai')){
-cpref = `Hay Saya CornFake-Bot Whatsapp Ketik .menu Untuk Mengakses`
+cpref = `Hay Saya CornFake-Bot Whatsapp Ketik ${prefix}menu Untuk Mengakses`
 reply(cpref)
 }
 if(budy.includes('hai')){
-cpref = `Hay Saya CornFake-Bot Whatsapp Ketik .menu Untuk Mengakses`
+cpref = `Hay Saya CornFake-Bot Whatsapp Ketik ${prefix}menu Untuk Mengakses`
 reply(cpref)
 }
 if(budy.includes('tendang')){
@@ -1593,10 +1593,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik ${prefix}allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -1649,10 +1649,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -1733,10 +1733,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefi}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -1816,10 +1816,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -1906,10 +1906,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2063,10 +2063,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2132,10 +2132,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2207,10 +2207,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2289,10 +2289,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2414,10 +2414,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2471,10 +2471,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2553,10 +2553,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2683,10 +2683,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2917,10 +2917,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -2986,10 +2986,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
@@ -3026,7 +3026,7 @@ menu =
 ╰─❒`
 teks =
 `*「 の C O R N  F A K E あ」*`
-kurr.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}allmenu`, buttonText: { displayText: 'BACK MENU HERE' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '😎NOMER ORANG GANTENG😎' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fs.readFileSync('./runtime.jpeg'), contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
+kurr.sendMessage(from, { contentText: `${menu}`, footerText: `${teks}`, buttons: [{ buttonId: `${prefix}menu`, buttonText: { displayText: 'BACK MENU HERE' }, type: 1 },{ buttonId: `${prefix}owner`, buttonText: { displayText: '😎NOMER ORANG GANTENG😎' }, type: 1 } ], headerType: 'LOCATION', locationMessage: { degreesLatitude: '', degreesLongitude: '', jpegThumbnail: fs.readFileSync('./runtime.jpeg'), contextInfo: {mentionedJid: [sender]}}}, 'buttonsMessage')
 man = fs.readFileSync('./tqto.mp3');
 kurr.sendMessage(from, man, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
 break        
@@ -6397,10 +6397,10 @@ else if(menusimpel = true){
 fill =`Ohayoo ${pushname}, ${tampilUcapan}
 Silahkan Pilih Untuk Menampilkan Menu
 
-Jika Button Tidak Muncul Ketik .allmenu`
+Jika Button Tidak Muncul Ketik ${prefix}menu`
 menu =`「 の C O R N  F A K E あ」`
 gbutsan = [
-{buttonId:`${prefix}allmenu`,buttonText:{displayText:'SHOW MENU'},type:1},
+{buttonId:`${prefix}menu`,buttonText:{displayText:'SHOW MENU'},type:1},
 {buttonId:`${prefix}store`,buttonText:{displayText:'STORE MENU'},type:1},
 {buttonId:`${prefix}sewa`,buttonText:{displayText:'SEWABOT'},type:1}
 ]
