@@ -283,96 +283,89 @@ kurr.on("group-update", async (anu) => {
 
   });
 
-kurr.on("group-participants-update", async (anu) => {
-    try {
-      groupMet = await kurr.groupMetadata(anu.jid);
-      groupMembers = groupMet.participants;
-      groupAdmins = getGroupAdmins(groupMembers);
-      mem = anu.participants[0];
+kurr.on('group-participants-update', async (anu) => {
 
-      console.log(anu);
-      try {
-        pp_user = await kurr.getProfilePicture(mem);
-      } catch (e) {
-        pp_user =
-          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60";
-      }
-      try {
-        pp_grup = await kurr.getProfilePicture(anu.jid);
-      } catch (e) {
-        pp_grup =
-          "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png?q=60";
-      }
-      if (anu.action == "add" && mem.includes(kurr.user.jid)) {
-        kurr.sendMessage(anu.jid, "Halo!", "conversation");
-      }
-      if (anu.action == "add" && !mem.includes(kurr.user.jid)) {
-        mdata = await kurr.groupMetadata(anu.jid);
-        memeg = mdata.participants.length;
-        num = anu.participants[0];
-        let v = kurr.contacts[num] || { notify: num.replace(/@.+/, "") };
-        anu_user = v.vname || v.notify || num.split("@")[0];
-        time_wel = moment.tz("Asia/Jakarta").format("HH:mm");
-        teks = `Halo ${anu_user} Welcome\nIntro Dulu\n• Nama:\n• Umur:\n• Status:\n• Askot:\nDi isi ya biar Kenal Wkwk`;
-        buff = await getBuffer(
-          `http://hadi-api.herokuapp.com/api/card/welcome?nama=${anu_user}&descriminator=${
-            groupMembers.length
-          }&memcount=${memeg}&gcname=${encodeURI(
-            mdata.subject
-          )}&pp=${pp_user}&bg=https://i.ibb.co/SVSzyXr/20220114-162121.jpg`
-        );
-        buttons = [
-          { buttonId: `${prefix}donasi`, buttonText: { displayText: "「  W E L C O M E 🔥 」" }, type: 1 },
-        ];
-        imageMsg = (
-          await kurr.prepareMessageMedia(buff, "imageMessage", {
-            thumbnail: buff,
-          })
-        ).imageMessage;
-        buttonsMessage = {
-          contentText: `${teks}`,
-          footerText: "YANG BETAH YA BEBAN!!!",
-          imageMessage: imageMsg,
-          buttons: buttons,
-          headerType: 4,
-        };
-        prep = await kurr.prepareMessageFromContent(
-          mdata.id,
-          { buttonsMessage },
-          {}
-        );
-        kurr.relayWAMessage(prep);
-      }
-      if (anu.action == "remove" && !mem.includes(kurr.user.jid)) {
-        mdata = await kurr.groupMetadata(anu.jid);
-        num = anu.participants[0];
-        let w = kurr.contacts[num] || { notify: num.replace(/@.+/, "") };
-        anu_user = w.vname || w.notify || num.split("@")[0];
-        time_wel = moment.tz("Asia/Jakarta").format("HH:mm");
-        memeg = mdata.participants.length;
-        out = `Sayonara ${anu_user}`;
-        buff = await getBuffer(
-          `http://hadi-api.herokuapp.com/api/card/goodbye?nama=${anu_user}&descriminator=${
-           groupMembers.length
-          }&memcount=${memeg}&gcname=${encodeURI(
-            mdata.subject
-          )}&pp=${pp_user}&bg=https://i.ibb.co/SVSzyXr/20220114-162121.jpg`
-        );
-        buttons = [
-          { buttonId: `${prefix}donasi`, buttonText: { displayText: "「  S E E  Y O U 🔥 」" }, type: 1 },
-        ];
-        imageMsg = (
-          await kurr.prepareMessageMedia(buff, "imageMessage", {
-            thumbnail: buff,
-          })
-        ).imageMessage;
-        buttonsMessage = {
-          contentText: `${out}`,
-          footerText: "MAMPUS ANJG KENA MENTAL!!!",
-          imageMessage: imageMsg,
-          buttons: buttons,
-          headerType: 4,
-        };
+	try {
+
+		mdata = await kurr.groupMetadata(anu.jid)
+
+		console.log(anu)
+
+		if (anu.action == 'add') {
+
+			num = anu.participants[0]
+
+			try {
+
+				ppUrl = await kurr.getProfilePicture(num)
+
+				} catch {
+
+					ppUrl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
+
+				}
+
+				img = await getBuffer(ppUrl)
+
+				teks = ` Hi Idoll @${num.split('@')[0]}\nSELAMAT DATANG DI\nDI *${mdata.subject}*\nJANGAN LUPA BACA RULES\nGA BACA RULES AUTO KICK!☺`
+
+				sendButImage(anu.jid, teks, `CornFake-Bot`, img,but = [{buttonId:`${prefix}donasi`, 
+
+               buttonText:{displayText: 'WELCOME BEBAN!!!'},type:1}], options = {contextInfo: {mentionedJid: [num, htod]}})
+
+			} else if (anu.action == 'remove') {
+
+			num = anu.participants[0]
+
+			try {
+
+				kuburan = 'https://telegra.ph/file/f9c6f4a3043bd313e9afb.jpg'
+
+				} catch {
+
+					kuburan = 'https://telegra.ph/file/f9c6f4a3043bd313e9afb.jpg'
+
+				}
+
+				img = await getBuffer(kuburan)
+
+				teks = `AKHIRNYA BEBAN KELUARGA\nTELAH KENA MENTAL\n@${num.split('@')[0]}\nKARNA BAPER DI\n*${mdata.subject}*`
+
+				sendButImage(anu.jid, teks, `CornFake-Bot`, img,but = [{buttonId: `${prefix}donasi`, buttonText: {displayText: `「  BEBAN ANJG!  」`}, type: 1}], options = {contextInfo: {mentionedJid: [num, htod]}})
+
+			} else if (anu.action == 'promote') {
+
+			num = anu.participants[0]
+
+			try {
+
+				ppUrl = await kurr.getProfilePicture(num)
+
+				} catch {
+
+					ppUrl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
+
+				}
+
+				img = await getBuffer(ppUrl)
+
+				teks = `「 PROMOTE - DETECTED 」\n\nNama : @${num.split("@")[0]}\nStatus : Member -> Admin\nGroup : ${mdata.subject}`
+
+				sendButImage(anu.jid, teks, ``, img,but = [{buttonId: `${prefix}donasi`, buttonText: {displayText: `WIHHH JADI ATMINN.`}, type: 1}], options = {contextInfo: {mentionedJid: [num]}})
+
+			} else if (anu.action == 'demote') {
+
+			num = anu.participants[0]
+
+			try {
+
+				ppUrl = await kurr.getProfilePicture(num)
+
+				} catch {
+
+					ppUrl = 'https://i.ibb.co/6BRf4Rc/Hans-Bot-No-Profile.png'
+
+				}
 
 				img = await getBuffer(ppUrl)
 
