@@ -1379,14 +1379,6 @@ kurr.updatePresence(from, Presence.recording)
 		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
 		const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
-		if (isCmd && antiSpam.isFiltered(from) && !isGroup) { console.log(color('[SPAM]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname))
-return reply('😒Sabar Anjg Delay 5 Detik/Command')}  
-if (isCmd && antiSpam.isFiltered(from) && isGroup) { console.log(color('[SPAM]', 'red'), color(time, 'yellow'), color(`${command} [${args.length}]`), 'from', color(pushname), 'in', color(groupName))
-return reply('😒Sabar Anjg Delay 5 Detik/Command')}
-if (isCmd && !isOwner) antiSpam.addFilter(from)
-		if (!publik) {
-		if (!isOwner && !mek.key.fromMe) return
-		}
 	    if (isCmd && !isGroup) {console.log(color('|CMD|', 'greenyellow'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'blue'), color(`${command} [${args.length}]`, 'cyan'), color(`${pushname}`, 'orange'), color(`${sender}`, 'deeppink'))}
 	    if (!command) {console.log(color('|MSG|', 'greenyellow'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'blue'), color(cmd, 'cyan'), color(`${pushname}`, 'orange'), color(`${sender}`, 'deeppink'))}
 		
@@ -5498,15 +5490,16 @@ if (!isOwner && !mek.key.fromMe) return reply(`Khusus Owner Om`)
 				return kurr.sendMessage(from, JSON.stringify(eval(process.exit())))
 				reply('Okey')
 				break
-				case 'togif': case 'tomp4':            
+				case 'tomp4':
+					case 'togif':
+            
 					if (!isQuotedSticker) return reply('reply stiker nya')
                                         reply(`Bentar Nyett....`)
             if ((isMedia && !mek.message.videoMessage || isQuotedSticker) && args.length == 0) {
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             owgi = await kurr.downloadAndSaveMediaMessage(ger)
             webp2mp4File(owgi).then(res=>{
-            getBuffer(res.result)
-            kurr.sendMessage(from, owgi, video, { mimetype: 'video/mp4', quoted: mek }
+            sendMediaURL(from,res.result)
             })
             }else {
             reply('reply Stickernya Dulu Mekkkkk!')
