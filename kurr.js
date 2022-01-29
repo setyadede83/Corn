@@ -5505,7 +5505,7 @@ if (!isOwner && !mek.key.fromMe) return reply(`Khusus Owner Om`)
             ger = isQuotedSticker ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
             owgi = await kurr.downloadAndSaveMediaMessage(ger)
             webp2mp4File(owgi).then(res=>{
-            owgi = await getBuffer(res.result)
+            await getBuffer(res.result)
             kurr.sendMessage(from, owgi, video, { mimetype: 'video/mp4', quoted: mek }
             })
             }else {
